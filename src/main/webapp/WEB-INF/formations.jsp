@@ -12,7 +12,7 @@
 	<h1>les formations</h1>
 		<% for (Formation f : Formation.getListeFormations()) { %>
 		<li>	
-			<a href="/detailFormation?titre=<%=f.getTitre() %>"><%= f.getTitre() %></a>
+			<a href="/evalServlet/detailFormation?titre=<%=f.getTitre() %>"><%= f.getTitre() %></a>
 		</li>
 	<% } %>
 </body>

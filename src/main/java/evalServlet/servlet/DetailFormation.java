@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="pko/detailFormation")
+@WebServlet(urlPatterns="/detailFormation")
 public class DetailFormation extends HttpServlet{
 	public DetailFormation() {}
 	
@@ -20,9 +20,9 @@ public class DetailFormation extends HttpServlet{
 				throws ServletException, IOException {
 		String titre=request.getParameter("titre");
 		Formation f = Formation.getListeFormations().get(Formation.getIndexFormationFromTitre(titre));
+		System.out.println("titre : "+f.getTitre());
 		request.setAttribute("formation", f);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/detailFormation.jsp").forward(request, response);
-
 	}
 	
 	@Override
